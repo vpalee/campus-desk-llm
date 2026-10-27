@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#162c45"><title>Campus Desk · IT help, with sources</title><link rel="stylesheet" href="/static/style.css"><script defer src="/static/app.js"></script></head>
+<body>
+<header><a class="brand" href="/" aria-label="Campus Desk home"><svg aria-hidden="true" width="31" height="31" viewBox="0 0 31 31"><path d="M3 5h25v18H3zM8 27h15M15.5 23v4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 11h13M9 16h8" stroke="currentColor" stroke-width="2"/></svg>Campus Desk</a><span class="header-note">IT help, with sources.</span><span class="demo-tag">Fictional campus demo</span></header>
+<main>
+<section class="workspace" aria-labelledby="intro-title">
+<div class="intro"><h1 id="intro-title">A little less stuck.</h1><p>Describe your campus IT problem. Find the next step, and the handbook behind it.</p></div>
+<form id="ask-form"><label for="question">What do you need help with?</label><textarea id="question" name="question" maxlength="1200" minlength="3" rows="3" required placeholder="I have a new phone and can't get my sign-in codes…"></textarea><div class="form-bottom"><span>Keep passwords and private details out of your question.</span><button id="ask-button" type="submit">Find an answer <span aria-hidden="true">→</span></button></div></form>
+<div class="examples" aria-label="Example questions"><span>Try a question</span><button type="button" data-question="How do I connect my laptop to student wifi?">Student Wi-Fi</button><button type="button" data-question="I have a new phone and one unused backup code. What should I do?">New phone</button><button type="button" data-question="Can IT extend my deadline if my assignment upload fails?">Assignment upload</button></div>
+<div id="service-status" class="service-status" role="status">Checking configuration…</div>
+<section class="answer-section" aria-labelledby="answer-title" aria-busy="false"><div class="section-title"><h2 id="answer-title">Your answer</h2><span id="answer-state">Ready when you are</span></div><div id="answer" aria-live="polite"><p class="empty">Ask a question to see a suggested next step. Each answer links to its sources so you can check the details.</p></div><div id="sources"></div><details id="trace" hidden><summary>View handbook lookups</summary><ul id="trace-list"></ul></details></section>
+<p class="policy-note">This is an original demo handbook, not official KMITL guidance. The assistant can explain procedures; it cannot change accounts, create tickets, or issue refunds.</p>
+</section>
+<aside class="handbook" aria-labelledby="handbook-title"><div class="handbook-heading"><h2 id="handbook-title">The handbook</h2><span>16 articles</span></div><p>Browse the same sources the assistant uses.</p><label class="visually-hidden" for="filter">Filter handbook articles</label><input id="filter" type="search" placeholder="Find an article…" autocomplete="off"><div id="article-list" aria-live="polite"></div><p class="handbook-footer">Demo handbook v1 · October 2026<br>Policies and service limits are fictional.</p></aside>
+</main><footer>Built for the Building LLM-Powered Applications capstone.<a href="/docs">API documentation</a></footer>
+</body></html>
