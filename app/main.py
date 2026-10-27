@@ -1,4 +1,6 @@
 from pathlib import Path
+from contextlib import nullcontext
+import os
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -6,10 +8,12 @@ from app.agent import HelpdeskAgent, AgentError
 from app.config import MODEL, configuration_ready
 from app.retrieval import KnowledgeBase, ROOT
 from app.schemas import AskRequest
+from app.demo_limits import DemoBudget, DemoBusy
 
 kb = KnowledgeBase()
 app = FastAPI(title='Campus Desk', description='Fictional university IT handbook assistant', version='1.0.0', docs_url=None, redoc_url=None)
 agent = HelpdeskAgent(kb)
+demo_budget = DemoBudget()
 
 @app.middleware('http')
 async def response_headers(request, call_next):
@@ -23,7 +27,8 @@ async def response_headers(request, call_next):
 
 @app.get('/api/health')
 def health():
-    return {'status':'ok','configured':configuration_ready(),'model':MODEL,'articles':len(kb.articles),'fictional':True}
+    return {'status':'ok','configured':configuration_ready(),'model':MODEL,'articles':len(kb.articles),'fictional':True,
+            'public_demo':os.getenv('PUBLIC_DEMO') == '1'}
 
 @app.get('/api/articles')
 def articles():
@@ -32,7 +37,10 @@ def articles():
 @app.post('/api/ask')
 def ask(body: AskRequest):
     try:
-        return agent.run(body.question)
+        with demo_budget.slot() if os.getenv('PUBLIC_DEMO') == '1' else nullcontext():
+            return agent.run(body.question)
+    except DemoBusy as e:
+        raise HTTPException(status_code=429, detail=str(e), headers={'Retry-After':str(e.retry_after)}) from None
     except AgentError as e:
         raise HTTPException(status_code=503, detail=str(e)) from None
 

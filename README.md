@@ -116,4 +116,14 @@ These eight cases were used for compatibility development. They are **not** a he
 - Questions and retrieved evidence are transmitted to the configured class proxy. The app does not persist chats. Do not enter private details or passwords.
 - This is a local, single-user prototype bound to `127.0.0.1`. Public deployment would need authentication, request limits, operational monitoring, and institution-approved content.
 
-The project currently supports Q1 (repository). The PDF report and video/live deployment are separate Q2/Q3 deliverables. [Thai handoff notes](docs/HANDOFF_TH.md) explain the demo and numbers for the live defence.
+The PDF report and live deployment are separate Q2/Q3 deliverables. [Thai handoff notes](docs/HANDOFF_TH.md) explain the demo and numbers for the live defence.
+
+## Deploy the Q3 live demo on Render
+
+The [Render Blueprint](render.yaml) runs this same FastAPI application on the Free compute plan, with Python 3.13.13 and the pinned lock file. It uses one Uvicorn worker, binds to Render's `$PORT`, and exposes `/api/health` for health checks. See [the deployment notes](docs/DEPLOYMENT.md) for manual setup and verification.
+
+Set `OPENAI_API_KEY` as a server environment secret in Render. Never put it in the repository, a browser field in this application, or static JavaScript. The Blueprint includes the non-secret class-proxy URL and enables `PUBLIC_DEMO=1`.
+
+Public demo mode reserves a workload budget before calling the model: at most two concurrent questions, 30 accepted questions per rolling hour, and 120 per rolling day. Rejected requests receive HTTP 429 with a `Retry-After` header. Failed model requests still consume a reservation. Health checks and handbook browsing do not consume it. This best-effort budget is process-local, resets on restart, and is not a provider billing cap; retain one worker. Local mode is unchanged when `PUBLIC_DEMO` is absent.
+
+Render's Free service sleeps after idle periods and may show a startup page while waking. It is intended for a coursework demonstration, not a real university service. The corpus, labels, retrieval cutoff, and frozen evaluation outputs are unchanged by the deployment configuration.
