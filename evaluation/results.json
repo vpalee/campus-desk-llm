@@ -1,0 +1,1120 @@
+{
+  "schema_version": 1,
+  "kind": "offline retrieval only; not model answer accuracy",
+  "k": 3,
+  "threshold_selection": "development cases only; decision accuracy then MRR then larger threshold",
+  "dev_candidates": [
+    {
+      "min_score": 0.12,
+      "decision_accuracy": 0.9,
+      "mrr_at_3": 1.0
+    },
+    {
+      "min_score": 0.18,
+      "decision_accuracy": 0.9,
+      "mrr_at_3": 1.0
+    },
+    {
+      "min_score": 0.24,
+      "decision_accuracy": 1.0,
+      "mrr_at_3": 1.0
+    },
+    {
+      "min_score": 0.3,
+      "decision_accuracy": 1.0,
+      "mrr_at_3": 1.0
+    },
+    {
+      "min_score": 0.36,
+      "decision_accuracy": 0.9,
+      "mrr_at_3": 0.875
+    }
+  ],
+  "selected_min_score": 0.3,
+  "sha256": {
+    "data/articles.json": "fc93c506b6384ba477ab6b206026cea2af7431a0e8314e0b1071dbc5ede0401b",
+    "data/glossary.json": "d0dfcf0bd27df715e92f41276886993bf7635b4ccc11be7405f583086a86f606",
+    "evaluation/dev.jsonl": "09de9cb4540d0f0dfbfaffe7de3220ba6f27276855750002b060b0a697f77e66",
+    "evaluation/test.jsonl": "8de93473c9c7176738444046ed6ec8be96031092bf11a2c44101861994b8209a",
+    "app/retrieval.py": "c139324c19dafef883c57c2e30f276f689dd2a0b7f9937823cb89f2eb5f00579"
+  },
+  "systems": {
+    "baseline_bm25": {
+      "answerable": 26,
+      "out_of_scope": 4,
+      "recall_at_3": 0.9615384615384616,
+      "mrr_at_3": 0.9230769230769231,
+      "out_of_scope_abstention_rate": 0.5,
+      "decision_accuracy": 0.9,
+      "cases": [
+        {
+          "id": "test-01",
+          "question": "I cannot remember my campus passphrase. What should I do?",
+          "relevant_ids": [
+            "account-reset"
+          ],
+          "retrieved_ids": [
+            "account-reset",
+            "wifi-guest",
+            "vpn-access"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-02",
+          "question": "The recovery email is gone; how do I reset my password?",
+          "relevant_ids": [
+            "account-reset"
+          ],
+          "retrieved_ids": [
+            "account-reset",
+            "phishing-report",
+            "account-locked"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-03",
+          "question": "I tried signing in five times and now it refuses me.",
+          "relevant_ids": [
+            "account-locked"
+          ],
+          "retrieved_ids": [
+            "account-locked",
+            "software-license"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-04",
+          "question": "After too many tries, can changing the password skip the wait?",
+          "relevant_ids": [
+            "account-locked"
+          ],
+          "retrieved_ids": [
+            "account-locked",
+            "account-reset",
+            "wifi-student"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-05",
+          "question": "My lost phone had the OTP app and I have no backup codes.",
+          "relevant_ids": [
+            "mfa-recovery"
+          ],
+          "retrieved_ids": [
+            "mfa-recovery",
+            "desk-hours"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-06",
+          "question": "I have a new phone and one unused backup code.",
+          "relevant_ids": [
+            "mfa-recovery"
+          ],
+          "retrieved_ids": [
+            "mfa-recovery",
+            "account-reset",
+            "desk-hours"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-07",
+          "question": "How do I put my laptop on student wifi?",
+          "relevant_ids": [
+            "wifi-student"
+          ],
+          "retrieved_ids": [
+            "wifi-student",
+            "wifi-guest",
+            "software-license"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-08",
+          "question": "The student wireless certificate looks different. Should I accept it?",
+          "relevant_ids": [
+            "wifi-student"
+          ],
+          "retrieved_ids": [
+            "wifi-student",
+            "wifi-guest",
+            "software-license"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-09",
+          "question": "A conference guest needs internet for today.",
+          "relevant_ids": [
+            "wifi-guest"
+          ],
+          "retrieved_ids": [
+            "wifi-guest"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-10",
+          "question": "How long does a visitor voucher last?",
+          "relevant_ids": [
+            "wifi-guest"
+          ],
+          "retrieved_ids": [
+            "wifi-guest"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-11",
+          "question": "I need remote access to an internal service from my apartment.",
+          "relevant_ids": [
+            "vpn-access"
+          ],
+          "retrieved_ids": [
+            "vpn-access",
+            "wifi-guest",
+            "account-reset"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-12",
+          "question": "Do I need VPN for public websites?",
+          "relevant_ids": [
+            "vpn-access"
+          ],
+          "retrieved_ids": [
+            "vpn-access"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-13",
+          "question": "I am not receiving messages in my university inbox.",
+          "relevant_ids": [
+            "email-delivery"
+          ],
+          "retrieved_ids": [
+            "email-quota",
+            "wifi-guest",
+            "software-license"
+          ],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-14",
+          "question": "Where do I check for quarantined email?",
+          "relevant_ids": [
+            "email-delivery"
+          ],
+          "retrieved_ids": [
+            "account-reset",
+            "email-delivery",
+            "wifi-student"
+          ],
+          "reciprocal_rank_at_3": 0.5
+        },
+        {
+          "id": "test-15",
+          "question": "My full email caused a message to bounce. Can IT recover it?",
+          "relevant_ids": [
+            "email-quota"
+          ],
+          "retrieved_ids": [
+            "email-quota",
+            "email-delivery",
+            "wifi-student"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-16",
+          "question": "What is the mailbox storage limit?",
+          "relevant_ids": [
+            "email-quota"
+          ],
+          "retrieved_ids": [
+            "email-quota",
+            "email-delivery",
+            "storage-restore"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-17",
+          "question": "How do I top up my print balance and collect a job?",
+          "relevant_ids": [
+            "printing-credit"
+          ],
+          "retrieved_ids": [
+            "printing-credit",
+            "printing-refund",
+            "lms-upload"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-18",
+          "question": "Does a job that I never release cost printing credit?",
+          "relevant_ids": [
+            "printing-credit"
+          ],
+          "retrieved_ids": [
+            "printing-credit",
+            "printing-refund",
+            "account-reset"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-19",
+          "question": "The printer charged me for blank pages. Can I ask for money back?",
+          "relevant_ids": [
+            "printing-refund"
+          ],
+          "retrieved_ids": [
+            "printing-refund",
+            "printing-credit",
+            "software-license"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-20",
+          "question": "What information is needed for a printing refund review?",
+          "relevant_ids": [
+            "printing-refund"
+          ],
+          "retrieved_ids": [
+            "printing-refund",
+            "printing-credit",
+            "email-delivery"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-21",
+          "question": "My class disappeared from Moodle after I registered.",
+          "relevant_ids": [
+            "lms-enrollment"
+          ],
+          "retrieved_ids": [
+            "account-reset",
+            "lms-enrollment"
+          ],
+          "reciprocal_rank_at_3": 0.5
+        },
+        {
+          "id": "test-22",
+          "question": "Can the helpdesk extend the deadline if I cannot hand in my PDF?",
+          "relevant_ids": [
+            "lms-upload"
+          ],
+          "retrieved_ids": [
+            "lms-upload",
+            "wifi-guest",
+            "lms-enrollment"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-23",
+          "question": "Can I activate the office apps with my student account?",
+          "relevant_ids": [
+            "software-license"
+          ],
+          "retrieved_ids": [
+            "software-license",
+            "account-locked",
+            "mfa-recovery"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-24",
+          "question": "How long do deleted cloud files stay in the trash?",
+          "relevant_ids": [
+            "storage-restore"
+          ],
+          "retrieved_ids": [
+            "storage-restore",
+            "lms-upload",
+            "email-quota"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-25",
+          "question": "I entered my password into a fake login link.",
+          "relevant_ids": [
+            "phishing-report"
+          ],
+          "retrieved_ids": [
+            "phishing-report",
+            "account-reset",
+            "account-locked"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-26",
+          "question": "Is the help counter open on Saturday?",
+          "relevant_ids": [
+            "desk-hours"
+          ],
+          "retrieved_ids": [
+            "desk-hours",
+            "phishing-report",
+            "storage-restore"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-27",
+          "question": "Reset the password for my personal cryptocurrency account.",
+          "relevant_ids": [],
+          "retrieved_ids": [
+            "account-locked",
+            "account-reset",
+            "software-license"
+          ],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-28",
+          "question": "What is the tuition refund policy for withdrawing this semester?",
+          "relevant_ids": [],
+          "retrieved_ids": [
+            "printing-refund",
+            "storage-restore"
+          ],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-29",
+          "question": "Which medicine should I take for a fever?",
+          "relevant_ids": [],
+          "retrieved_ids": [],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-30",
+          "question": "What is my GPA and can you change my final grade?",
+          "relevant_ids": [],
+          "retrieved_ids": [],
+          "reciprocal_rank_at_3": 0
+        }
+      ]
+    },
+    "naive_hybrid": {
+      "answerable": 26,
+      "out_of_scope": 4,
+      "recall_at_3": 1.0,
+      "mrr_at_3": 0.9615384615384616,
+      "out_of_scope_abstention_rate": 0.5,
+      "decision_accuracy": 0.9333333333333333,
+      "cases": [
+        {
+          "id": "test-01",
+          "question": "I cannot remember my campus passphrase. What should I do?",
+          "relevant_ids": [
+            "account-reset"
+          ],
+          "retrieved_ids": [
+            "account-reset",
+            "wifi-student",
+            "phishing-report"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-02",
+          "question": "The recovery email is gone; how do I reset my password?",
+          "relevant_ids": [
+            "account-reset"
+          ],
+          "retrieved_ids": [
+            "account-reset",
+            "phishing-report",
+            "wifi-student"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-03",
+          "question": "I tried signing in five times and now it refuses me.",
+          "relevant_ids": [
+            "account-locked"
+          ],
+          "retrieved_ids": [
+            "software-license",
+            "account-locked"
+          ],
+          "reciprocal_rank_at_3": 0.5
+        },
+        {
+          "id": "test-04",
+          "question": "After too many tries, can changing the password skip the wait?",
+          "relevant_ids": [
+            "account-locked"
+          ],
+          "retrieved_ids": [
+            "account-locked",
+            "account-reset",
+            "mfa-recovery"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-05",
+          "question": "My lost phone had the OTP app and I have no backup codes.",
+          "relevant_ids": [
+            "mfa-recovery"
+          ],
+          "retrieved_ids": [
+            "mfa-recovery",
+            "desk-hours"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-06",
+          "question": "I have a new phone and one unused backup code.",
+          "relevant_ids": [
+            "mfa-recovery"
+          ],
+          "retrieved_ids": [
+            "mfa-recovery",
+            "account-reset",
+            "desk-hours"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-07",
+          "question": "How do I put my laptop on student wifi?",
+          "relevant_ids": [
+            "wifi-student"
+          ],
+          "retrieved_ids": [
+            "wifi-student",
+            "wifi-guest",
+            "account-reset"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-08",
+          "question": "The student wireless certificate looks different. Should I accept it?",
+          "relevant_ids": [
+            "wifi-student"
+          ],
+          "retrieved_ids": [
+            "wifi-student",
+            "wifi-guest",
+            "vpn-access"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-09",
+          "question": "A conference guest needs internet for today.",
+          "relevant_ids": [
+            "wifi-guest"
+          ],
+          "retrieved_ids": [
+            "wifi-guest",
+            "wifi-student",
+            "phishing-report"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-10",
+          "question": "How long does a visitor voucher last?",
+          "relevant_ids": [
+            "wifi-guest"
+          ],
+          "retrieved_ids": [
+            "wifi-guest"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-11",
+          "question": "I need remote access to an internal service from my apartment.",
+          "relevant_ids": [
+            "vpn-access"
+          ],
+          "retrieved_ids": [
+            "vpn-access",
+            "wifi-guest",
+            "account-reset"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-12",
+          "question": "Do I need VPN for public websites?",
+          "relevant_ids": [
+            "vpn-access"
+          ],
+          "retrieved_ids": [
+            "vpn-access"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-13",
+          "question": "I am not receiving messages in my university inbox.",
+          "relevant_ids": [
+            "email-delivery"
+          ],
+          "retrieved_ids": [
+            "email-delivery",
+            "email-quota",
+            "lms-enrollment"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-14",
+          "question": "Where do I check for quarantined email?",
+          "relevant_ids": [
+            "email-delivery"
+          ],
+          "retrieved_ids": [
+            "account-reset",
+            "email-delivery",
+            "wifi-student"
+          ],
+          "reciprocal_rank_at_3": 0.5
+        },
+        {
+          "id": "test-15",
+          "question": "My full email caused a message to bounce. Can IT recover it?",
+          "relevant_ids": [
+            "email-quota"
+          ],
+          "retrieved_ids": [
+            "email-quota",
+            "email-delivery",
+            "wifi-student"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-16",
+          "question": "What is the mailbox storage limit?",
+          "relevant_ids": [
+            "email-quota"
+          ],
+          "retrieved_ids": [
+            "email-quota",
+            "email-delivery",
+            "storage-restore"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-17",
+          "question": "How do I top up my print balance and collect a job?",
+          "relevant_ids": [
+            "printing-credit"
+          ],
+          "retrieved_ids": [
+            "printing-credit",
+            "printing-refund",
+            "lms-upload"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-18",
+          "question": "Does a job that I never release cost printing credit?",
+          "relevant_ids": [
+            "printing-credit"
+          ],
+          "retrieved_ids": [
+            "printing-credit",
+            "printing-refund",
+            "account-reset"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-19",
+          "question": "The printer charged me for blank pages. Can I ask for money back?",
+          "relevant_ids": [
+            "printing-refund"
+          ],
+          "retrieved_ids": [
+            "printing-refund",
+            "printing-credit",
+            "phishing-report"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-20",
+          "question": "What information is needed for a printing refund review?",
+          "relevant_ids": [
+            "printing-refund"
+          ],
+          "retrieved_ids": [
+            "printing-refund",
+            "printing-credit",
+            "email-delivery"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-21",
+          "question": "My class disappeared from Moodle after I registered.",
+          "relevant_ids": [
+            "lms-enrollment"
+          ],
+          "retrieved_ids": [
+            "lms-enrollment",
+            "lms-upload",
+            "email-delivery"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-22",
+          "question": "Can the helpdesk extend the deadline if I cannot hand in my PDF?",
+          "relevant_ids": [
+            "lms-upload"
+          ],
+          "retrieved_ids": [
+            "lms-upload",
+            "wifi-guest",
+            "lms-enrollment"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-23",
+          "question": "Can I activate the office apps with my student account?",
+          "relevant_ids": [
+            "software-license"
+          ],
+          "retrieved_ids": [
+            "software-license",
+            "account-locked",
+            "mfa-recovery"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-24",
+          "question": "How long do deleted cloud files stay in the trash?",
+          "relevant_ids": [
+            "storage-restore"
+          ],
+          "retrieved_ids": [
+            "storage-restore",
+            "email-quota",
+            "lms-upload"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-25",
+          "question": "I entered my password into a fake login link.",
+          "relevant_ids": [
+            "phishing-report"
+          ],
+          "retrieved_ids": [
+            "phishing-report",
+            "account-reset",
+            "wifi-student"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-26",
+          "question": "Is the help counter open on Saturday?",
+          "relevant_ids": [
+            "desk-hours"
+          ],
+          "retrieved_ids": [
+            "desk-hours",
+            "phishing-report",
+            "printing-credit"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-27",
+          "question": "Reset the password for my personal cryptocurrency account.",
+          "relevant_ids": [],
+          "retrieved_ids": [
+            "account-locked",
+            "account-reset",
+            "software-license"
+          ],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-28",
+          "question": "What is the tuition refund policy for withdrawing this semester?",
+          "relevant_ids": [],
+          "retrieved_ids": [
+            "printing-refund",
+            "storage-restore"
+          ],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-29",
+          "question": "Which medicine should I take for a fever?",
+          "relevant_ids": [],
+          "retrieved_ids": [],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-30",
+          "question": "What is my GPA and can you change my final grade?",
+          "relevant_ids": [],
+          "retrieved_ids": [],
+          "reciprocal_rank_at_3": 0
+        }
+      ]
+    },
+    "selected_hybrid": {
+      "answerable": 26,
+      "out_of_scope": 4,
+      "recall_at_3": 0.9230769230769231,
+      "mrr_at_3": 0.9230769230769231,
+      "out_of_scope_abstention_rate": 1.0,
+      "decision_accuracy": 0.9333333333333333,
+      "cases": [
+        {
+          "id": "test-01",
+          "question": "I cannot remember my campus passphrase. What should I do?",
+          "relevant_ids": [
+            "account-reset"
+          ],
+          "retrieved_ids": [
+            "account-reset"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-02",
+          "question": "The recovery email is gone; how do I reset my password?",
+          "relevant_ids": [
+            "account-reset"
+          ],
+          "retrieved_ids": [
+            "account-reset"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-03",
+          "question": "I tried signing in five times and now it refuses me.",
+          "relevant_ids": [
+            "account-locked"
+          ],
+          "retrieved_ids": [],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-04",
+          "question": "After too many tries, can changing the password skip the wait?",
+          "relevant_ids": [
+            "account-locked"
+          ],
+          "retrieved_ids": [
+            "account-locked"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-05",
+          "question": "My lost phone had the OTP app and I have no backup codes.",
+          "relevant_ids": [
+            "mfa-recovery"
+          ],
+          "retrieved_ids": [
+            "mfa-recovery"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-06",
+          "question": "I have a new phone and one unused backup code.",
+          "relevant_ids": [
+            "mfa-recovery"
+          ],
+          "retrieved_ids": [
+            "mfa-recovery"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-07",
+          "question": "How do I put my laptop on student wifi?",
+          "relevant_ids": [
+            "wifi-student"
+          ],
+          "retrieved_ids": [
+            "wifi-student"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-08",
+          "question": "The student wireless certificate looks different. Should I accept it?",
+          "relevant_ids": [
+            "wifi-student"
+          ],
+          "retrieved_ids": [
+            "wifi-student"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-09",
+          "question": "A conference guest needs internet for today.",
+          "relevant_ids": [
+            "wifi-guest"
+          ],
+          "retrieved_ids": [
+            "wifi-guest",
+            "wifi-student"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-10",
+          "question": "How long does a visitor voucher last?",
+          "relevant_ids": [
+            "wifi-guest"
+          ],
+          "retrieved_ids": [
+            "wifi-guest"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-11",
+          "question": "I need remote access to an internal service from my apartment.",
+          "relevant_ids": [
+            "vpn-access"
+          ],
+          "retrieved_ids": [
+            "vpn-access"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-12",
+          "question": "Do I need VPN for public websites?",
+          "relevant_ids": [
+            "vpn-access"
+          ],
+          "retrieved_ids": [
+            "vpn-access"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-13",
+          "question": "I am not receiving messages in my university inbox.",
+          "relevant_ids": [
+            "email-delivery"
+          ],
+          "retrieved_ids": [
+            "email-delivery",
+            "email-quota"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-14",
+          "question": "Where do I check for quarantined email?",
+          "relevant_ids": [
+            "email-delivery"
+          ],
+          "retrieved_ids": [],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-15",
+          "question": "My full email caused a message to bounce. Can IT recover it?",
+          "relevant_ids": [
+            "email-quota"
+          ],
+          "retrieved_ids": [
+            "email-quota",
+            "email-delivery"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-16",
+          "question": "What is the mailbox storage limit?",
+          "relevant_ids": [
+            "email-quota"
+          ],
+          "retrieved_ids": [
+            "email-quota",
+            "email-delivery"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-17",
+          "question": "How do I top up my print balance and collect a job?",
+          "relevant_ids": [
+            "printing-credit"
+          ],
+          "retrieved_ids": [
+            "printing-credit",
+            "printing-refund"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-18",
+          "question": "Does a job that I never release cost printing credit?",
+          "relevant_ids": [
+            "printing-credit"
+          ],
+          "retrieved_ids": [
+            "printing-credit",
+            "printing-refund"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-19",
+          "question": "The printer charged me for blank pages. Can I ask for money back?",
+          "relevant_ids": [
+            "printing-refund"
+          ],
+          "retrieved_ids": [
+            "printing-refund"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-20",
+          "question": "What information is needed for a printing refund review?",
+          "relevant_ids": [
+            "printing-refund"
+          ],
+          "retrieved_ids": [
+            "printing-refund"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-21",
+          "question": "My class disappeared from Moodle after I registered.",
+          "relevant_ids": [
+            "lms-enrollment"
+          ],
+          "retrieved_ids": [
+            "lms-enrollment"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-22",
+          "question": "Can the helpdesk extend the deadline if I cannot hand in my PDF?",
+          "relevant_ids": [
+            "lms-upload"
+          ],
+          "retrieved_ids": [
+            "lms-upload"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-23",
+          "question": "Can I activate the office apps with my student account?",
+          "relevant_ids": [
+            "software-license"
+          ],
+          "retrieved_ids": [
+            "software-license"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-24",
+          "question": "How long do deleted cloud files stay in the trash?",
+          "relevant_ids": [
+            "storage-restore"
+          ],
+          "retrieved_ids": [
+            "storage-restore"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-25",
+          "question": "I entered my password into a fake login link.",
+          "relevant_ids": [
+            "phishing-report"
+          ],
+          "retrieved_ids": [
+            "phishing-report"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-26",
+          "question": "Is the help counter open on Saturday?",
+          "relevant_ids": [
+            "desk-hours"
+          ],
+          "retrieved_ids": [
+            "desk-hours"
+          ],
+          "reciprocal_rank_at_3": 1.0
+        },
+        {
+          "id": "test-27",
+          "question": "Reset the password for my personal cryptocurrency account.",
+          "relevant_ids": [],
+          "retrieved_ids": [],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-28",
+          "question": "What is the tuition refund policy for withdrawing this semester?",
+          "relevant_ids": [],
+          "retrieved_ids": [],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-29",
+          "question": "Which medicine should I take for a fever?",
+          "relevant_ids": [],
+          "retrieved_ids": [],
+          "reciprocal_rank_at_3": 0
+        },
+        {
+          "id": "test-30",
+          "question": "What is my GPA and can you change my final grade?",
+          "relevant_ids": [],
+          "retrieved_ids": [],
+          "reciprocal_rank_at_3": 0
+        }
+      ]
+    }
+  }
+}
