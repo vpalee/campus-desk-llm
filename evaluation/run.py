@@ -29,7 +29,7 @@ def evaluate(kb, cases, method, threshold):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=ROOT/'evaluation/results.json')
+    parser.add_argument('--output', type=Path, default=Path('/tmp/campus-desk-retrieval.json'))
     args = parser.parse_args()
     kb = KnowledgeBase()
     load = lambda name: [json.loads(line) for line in (ROOT/f'evaluation/{name}.jsonl').read_text().splitlines()]
