@@ -1,0 +1,166 @@
+{
+  "forgot": [
+    "password",
+    "reset"
+  ],
+  "forgotten": [
+    "password",
+    "reset"
+  ],
+  "passphrase": [
+    "password"
+  ],
+  "locked out": [
+    "account",
+    "locked",
+    "failed",
+    "sign-ins"
+  ],
+  "too many tries": [
+    "account",
+    "locked",
+    "failed",
+    "sign-ins"
+  ],
+  "new phone": [
+    "multi-factor",
+    "authentication",
+    "authenticator",
+    "replacing",
+    "phone"
+  ],
+  "lost phone": [
+    "multi-factor",
+    "authentication",
+    "backup",
+    "codes"
+  ],
+  "2fa": [
+    "multi-factor",
+    "authentication"
+  ],
+  "otp": [
+    "multi-factor",
+    "authentication"
+  ],
+  "internet": [
+    "wireless",
+    "network"
+  ],
+  "wifi": [
+    "wireless"
+  ],
+  "wi-fi": [
+    "wireless"
+  ],
+  "eduroam": [
+    "wireless",
+    "student"
+  ],
+  "visitor": [
+    "guest",
+    "voucher"
+  ],
+  "conference guest": [
+    "visitor",
+    "sponsor",
+    "voucher"
+  ],
+  "at home": [
+    "off",
+    "campus",
+    "internal",
+    "VPN"
+  ],
+  "remote access": [
+    "VPN",
+    "internal"
+  ],
+  "outside campus": [
+    "off",
+    "campus",
+    "VPN"
+  ],
+  "not receiving": [
+    "missing",
+    "incoming",
+    "email"
+  ],
+  "inbox": [
+    "mailbox"
+  ],
+  "bounced": [
+    "quota",
+    "storage",
+    "mailbox"
+  ],
+  "full email": [
+    "mailbox",
+    "quota",
+    "storage"
+  ],
+  "print balance": [
+    "printing",
+    "credit"
+  ],
+  "money back": [
+    "refund",
+    "charged",
+    "print"
+  ],
+  "blank pages": [
+    "refund",
+    "charged",
+    "print"
+  ],
+  "class disappeared": [
+    "missing",
+    "course",
+    "learning",
+    "registration"
+  ],
+  "moodle": [
+    "learning",
+    "platform"
+  ],
+  "assignment": [
+    "assignment",
+    "upload"
+  ],
+  "hand in": [
+    "assignment",
+    "upload"
+  ],
+  "office apps": [
+    "software",
+    "license"
+  ],
+  "license expired": [
+    "software",
+    "license",
+    "activation"
+  ],
+  "deleted": [
+    "deleted",
+    "recycle",
+    "restore"
+  ],
+  "trash": [
+    "recycle",
+    "bin",
+    "restore"
+  ],
+  "scam": [
+    "phishing",
+    "suspicious"
+  ],
+  "fake login": [
+    "phishing",
+    "credentials"
+  ],
+  "help counter": [
+    "service",
+    "desk",
+    "hours"
+  ]
+}

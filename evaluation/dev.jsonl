@@ -1,0 +1,10 @@
+{"id": "dev-01", "question": "I forgot my passphrase", "relevant_ids": ["account-reset"]}
+{"id": "dev-02", "question": "My account is locked after failed sign-ins", "relevant_ids": ["account-locked"]}
+{"id": "dev-03", "question": "New phone, cannot get 2FA codes", "relevant_ids": ["mfa-recovery"]}
+{"id": "dev-04", "question": "How can a visitor get wifi?", "relevant_ids": ["wifi-guest"]}
+{"id": "dev-05", "question": "Reach the internal library service at home", "relevant_ids": ["vpn-access"]}
+{"id": "dev-06", "question": "The assignment upload fails", "relevant_ids": ["lms-upload"]}
+{"id": "dev-07", "question": "I deleted my cloud file yesterday", "relevant_ids": ["storage-restore"]}
+{"id": "dev-08", "question": "When is the help counter open?", "relevant_ids": ["desk-hours"]}
+{"id": "dev-09", "question": "Can you book a hotel for me?", "relevant_ids": []}
+{"id": "dev-10", "question": "Where can I buy a campus parking permit?", "relevant_ids": []}

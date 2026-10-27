@@ -1,0 +1,130 @@
+[
+  {
+    "id": "account-reset",
+    "title": "Reset a forgotten password",
+    "category": "Accounts",
+    "text": "Use the self-service password reset page from the student portal. Verify with your previously registered recovery email. Choose a new unique passphrase and sign out of other sessions. If the recovery email is unavailable, request an identity check at the IT service desk. Never send a password or recovery code in chat.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "account-locked",
+    "title": "Unlock an account after failed sign-ins",
+    "category": "Accounts",
+    "text": "Five failed sign-in attempts temporarily lock a campus account. Wait 15 minutes before trying again. Avoid repeated attempts during that period. If the lock persists after 15 minutes, contact the IT service desk. A password reset does not bypass the waiting period.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "mfa-recovery",
+    "title": "Recover multi-factor authentication after replacing a phone",
+    "category": "Accounts",
+    "text": "When the authenticator device is lost or replaced, use one unused backup code to sign in, then register the new authenticator in account security settings. If no backup codes remain, the IT service desk must verify identity and reset MFA enrollment. Do not disable MFA or share one-time codes.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "wifi-student",
+    "title": "Connect to the student wireless network",
+    "category": "Network",
+    "text": "Choose Campus-Student in wireless settings. Authenticate with the full student email address and campus password. Validate the certificate against the profile published in the student portal; do not accept an unexpected certificate. If a saved profile repeatedly fails, forget the network and install the current campus profile.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "wifi-guest",
+    "title": "Request wireless access for a visitor",
+    "category": "Network",
+    "text": "A university staff sponsor requests a guest voucher in the visitor portal. The visitor connects to Campus-Guest and enters the voucher on the captive portal. Each voucher expires after 24 hours. Guests cannot reach internal university services. Do not share student credentials with visitors.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "vpn-access",
+    "title": "Reach internal services from off campus",
+    "category": "Network",
+    "text": "Install the university-approved VPN client linked from the student portal. Select the Campus Remote profile and sign in with campus credentials plus MFA. The VPN is for internal services that are otherwise unavailable off campus. Disconnect when finished. Public websites do not require the VPN.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "email-delivery",
+    "title": "Troubleshoot missing incoming email",
+    "category": "Email",
+    "text": "Check spam and quarantine, then confirm that mailbox storage is below its quota. Review forwarding rules and blocked senders. If a message remains missing, give the service desk the approximate send time and sender domain, without sharing message content or credentials. The demo cannot inspect a real mailbox.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "email-quota",
+    "title": "Free space in a full mailbox",
+    "category": "Email",
+    "text": "When mailbox storage reaches 10 GB, incoming mail may bounce. Empty deleted items and junk, and move large attachments to approved university storage. Check storage again after cleanup. IT cannot recover messages rejected by a full mailbox; ask the sender to resend them after space is available.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "printing-credit",
+    "title": "Add printing credit and release a print job",
+    "category": "Printing",
+    "text": "Add credit through the campus print portal before sending a job. At a library printer, tap the student card and choose Release jobs. Unreleased jobs expire after 12 hours without a printing charge. If the balance is positive but release fails, note the printer ID and contact the service desk.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "printing-refund",
+    "title": "Request credit back for a failed print job",
+    "category": "Printing",
+    "text": "For a charged print job with blank or damaged pages, request a print-credit review in the print portal within 48 hours. Include the job ID, printer ID, and a description of the failure. Staff review the request; a refund is not guaranteed. The assistant cannot issue credit or approve refunds.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "lms-enrollment",
+    "title": "Find a missing course in the learning platform",
+    "category": "Learning",
+    "text": "Courses appear in the learning platform within 24 hours after confirmed registration. Check the current term filter and archived courses. If a registered course is still absent after 24 hours, contact the registrar about registration status, then IT if registration is confirmed. IT cannot add a student to a course.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "lms-upload",
+    "title": "Fix a failed assignment file upload",
+    "category": "Learning",
+    "text": "The learning platform accepts PDF and ZIP assignment files up to 20 MB unless the instructor states otherwise. Rename the file using letters, digits, hyphens, and underscores; retry in a current browser. For a deadline problem, contact the instructor. IT cannot extend a deadline or guarantee acceptance.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "software-license",
+    "title": "Install student software using a university license",
+    "category": "Software",
+    "text": "Eligible active students can find approved software in the software catalog after signing in. Use the university account when activating a license. Personal purchases are not reimbursed by IT. If a product is absent from the catalog, ask the course instructor about alternatives; do not use cracked installers.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "storage-restore",
+    "title": "Recover a deleted file from university cloud storage",
+    "category": "Storage",
+    "text": "Deleted university-cloud files remain in the recycle bin for 30 days. Open the recycle bin in the web interface, select the file, and choose Restore. Beyond 30 days, recovery is not guaranteed; contact IT promptly. This policy does not cover local disk files or personal cloud accounts.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "phishing-report",
+    "title": "Report a suspicious sign-in link or email",
+    "category": "Security",
+    "text": "Do not open suspicious links, download attachments, or enter credentials. Use the mail client Report phishing action. If credentials were entered, reset the campus password from the trusted portal and contact the IT service desk immediately. If a device ran an attachment, disconnect it from the network and ask IT for help.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  },
+  {
+    "id": "desk-hours",
+    "title": "Contact the IT service desk",
+    "category": "Support",
+    "text": "In this fictional campus, the IT service desk operates Monday through Friday, 09:00\u201317:00, excluding university holidays. Visit the library ground-floor help counter or use the support form in the student portal. Never include passwords, backup codes, or private identity documents in a chat. The assistant cannot create tickets or verify opening hours for a real institution.",
+    "source": "Campus Desk demo handbook v1",
+    "fictional": true
+  }
+]

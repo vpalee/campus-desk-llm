@@ -1,0 +1,30 @@
+{"id": "test-01", "question": "I cannot remember my campus passphrase. What should I do?", "relevant_ids": ["account-reset"]}
+{"id": "test-02", "question": "The recovery email is gone; how do I reset my password?", "relevant_ids": ["account-reset"]}
+{"id": "test-03", "question": "I tried signing in five times and now it refuses me.", "relevant_ids": ["account-locked"]}
+{"id": "test-04", "question": "After too many tries, can changing the password skip the wait?", "relevant_ids": ["account-locked"]}
+{"id": "test-05", "question": "My lost phone had the OTP app and I have no backup codes.", "relevant_ids": ["mfa-recovery"]}
+{"id": "test-06", "question": "I have a new phone and one unused backup code.", "relevant_ids": ["mfa-recovery"]}
+{"id": "test-07", "question": "How do I put my laptop on student wifi?", "relevant_ids": ["wifi-student"]}
+{"id": "test-08", "question": "The student wireless certificate looks different. Should I accept it?", "relevant_ids": ["wifi-student"]}
+{"id": "test-09", "question": "A conference guest needs internet for today.", "relevant_ids": ["wifi-guest"]}
+{"id": "test-10", "question": "How long does a visitor voucher last?", "relevant_ids": ["wifi-guest"]}
+{"id": "test-11", "question": "I need remote access to an internal service from my apartment.", "relevant_ids": ["vpn-access"]}
+{"id": "test-12", "question": "Do I need VPN for public websites?", "relevant_ids": ["vpn-access"]}
+{"id": "test-13", "question": "I am not receiving messages in my university inbox.", "relevant_ids": ["email-delivery"]}
+{"id": "test-14", "question": "Where do I check for quarantined email?", "relevant_ids": ["email-delivery"]}
+{"id": "test-15", "question": "My full email caused a message to bounce. Can IT recover it?", "relevant_ids": ["email-quota"]}
+{"id": "test-16", "question": "What is the mailbox storage limit?", "relevant_ids": ["email-quota"]}
+{"id": "test-17", "question": "How do I top up my print balance and collect a job?", "relevant_ids": ["printing-credit"]}
+{"id": "test-18", "question": "Does a job that I never release cost printing credit?", "relevant_ids": ["printing-credit"]}
+{"id": "test-19", "question": "The printer charged me for blank pages. Can I ask for money back?", "relevant_ids": ["printing-refund"]}
+{"id": "test-20", "question": "What information is needed for a printing refund review?", "relevant_ids": ["printing-refund"]}
+{"id": "test-21", "question": "My class disappeared from Moodle after I registered.", "relevant_ids": ["lms-enrollment"]}
+{"id": "test-22", "question": "Can the helpdesk extend the deadline if I cannot hand in my PDF?", "relevant_ids": ["lms-upload"]}
+{"id": "test-23", "question": "Can I activate the office apps with my student account?", "relevant_ids": ["software-license"]}
+{"id": "test-24", "question": "How long do deleted cloud files stay in the trash?", "relevant_ids": ["storage-restore"]}
+{"id": "test-25", "question": "I entered my password into a fake login link.", "relevant_ids": ["phishing-report"]}
+{"id": "test-26", "question": "Is the help counter open on Saturday?", "relevant_ids": ["desk-hours"]}
+{"id": "test-27", "question": "Reset the password for my personal cryptocurrency account.", "relevant_ids": []}
+{"id": "test-28", "question": "What is the tuition refund policy for withdrawing this semester?", "relevant_ids": []}
+{"id": "test-29", "question": "Which medicine should I take for a fever?", "relevant_ids": []}
+{"id": "test-30", "question": "What is my GPA and can you change my final grade?", "relevant_ids": []}
