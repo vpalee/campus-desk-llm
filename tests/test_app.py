@@ -66,6 +66,14 @@ class AgentTests(unittest.TestCase):
         m=tool();m.tool_calls[0].function.arguments='<|tool_call>call:search_knowledge{query:<|"|>new phone<|"|>}<tool_call|>'
         c=FakeClient([m,final()]);HelpdeskAgent(client=c).run('help')
         self.assertEqual(json.loads(c.calls[1]['messages'][2]['tool_calls'][0]['function']['arguments']),{'query':'new phone'})
+    def test_malformed_answer_gets_one_validated_repair(self):
+        c=FakeClient([tool(),ChatCompletionMessage(role='assistant',content='bad json'),final()])
+        self.assertEqual(HelpdeskAgent(client=c).run('new phone')['status'],'answered')
+        self.assertEqual(len(c.calls),3)
+    def test_empty_rewrite_falls_back_to_original_question(self):
+        r=HelpdeskAgent(client=FakeClient([tool(args={'query':'unfindablexyz'}),final()])).run('new phone backup code')
+        self.assertEqual(r['sources'][0]['id'],'mfa-recovery')
+        self.assertEqual(r['trace'][-1]['argument_format'],'original-question-fallback')
     def test_unknown_tool_rejected(self):
         with self.assertRaisesRegex(AgentError,'invalid'):
             HelpdeskAgent(client=FakeClient([tool('run_shell',{'command':'whoami'})])).run('help')
@@ -77,14 +85,14 @@ class AgentTests(unittest.TestCase):
             HelpdeskAgent(client=FakeClient([tool('get_article',{'article_id':'account-reset'})])).run('help')
     def test_out_of_corpus_citation_rejected(self):
         with self.assertRaisesRegex(AgentError,'validation'):
-            HelpdeskAgent(client=FakeClient([tool(),final(citations=['invented-id'])])).run('help')
+            HelpdeskAgent(client=FakeClient([tool(),final(citations=['invented-id']),final(citations=['invented-id'])])).run('help')
     def test_uncited_answer_rejected(self):
         with self.assertRaises(ValidationError):Answer(status='answered',answer='Unsupported',citations=[])
     def test_required_search_enforced(self):
         with self.assertRaisesRegex(AgentError,'skipped'):
             HelpdeskAgent(client=FakeClient([final()])).run('help')
     def test_empty_evidence_returns_abstention(self):
-        r=HelpdeskAgent(client=FakeClient([tool(args={'query':'medicine fever'})])).run('medicine')
+        r=HelpdeskAgent(client=FakeClient([tool(args={'query':'medicine fever'})])).run('Which medicine treats a fever?')
         self.assertEqual(r['status'],'insufficient_evidence');self.assertEqual(r['sources'],[])
     def test_stop_condition(self):
         with self.assertRaisesRegex(AgentError,'round limit'):

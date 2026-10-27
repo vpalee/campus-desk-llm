@@ -8,7 +8,7 @@ from app.retrieval import KnowledgeBase, ROOT
 from app.schemas import AskRequest
 
 kb = KnowledgeBase()
-app = FastAPI(title='Campus Desk', description='Fictional university IT handbook assistant', version='1.0.0')
+app = FastAPI(title='Campus Desk', description='Fictional university IT handbook assistant', version='1.0.0', docs_url=None, redoc_url=None)
 agent = HelpdeskAgent(kb)
 
 @app.middleware('http')
