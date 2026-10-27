@@ -4,6 +4,8 @@ A grounded university IT helpdesk assistant for students who need a next step, w
 
 **This is a fictional campus demo, not official KMITL guidance.** Its original 16-article handbook covers accounts, MFA recovery, wireless access, VPN, email, printing, assignment uploads, software, cloud storage, and phishing. It contains no student records or real institutional policies. The app explains procedures; it cannot reset accounts, issue refunds, create tickets, or change university records.
 
+**Q3 live app:** [Open Campus Desk](https://campus-desk-llm.onrender.com/). Hosted on Render Free; the first visit after inactivity may take about a minute to wake the service. Public model requests have a shared workload budget. Try the new-phone question and inspect its source; the known injection request can produce a safe validation error instead of a useful answer.
+
 Built for Q1 of the [Building LLM-Powered Applications capstone](https://courses.nat-d.uk/courses/building-llm-powered-applications/courseworks/20). This implementation, corpus, glossary, and evaluation were authored with AI assistance. The course permits AI tools; the student still needs to understand and defend the design and results. The instructor's [reference application](https://github.com/Nat-D/kmitl-llm-app-demo) is educational context, not the code or corpus submitted here.
 
 ![Campus Desk interface](docs/screenshot-desktop.jpg)

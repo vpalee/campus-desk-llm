@@ -1,5 +1,9 @@
 # Q3 live app deployment
 
+Live app: **https://campus-desk-llm.onrender.com/**
+
+Verified on 27 October 2026 using deployment commit `0bd2ff60379739a0840882ab811d086f950c9d80`. Render reported a successful Free deployment. The public health endpoint reported the required model, 16 articles, configured credentials, and public-demo mode. In the deployed browser UI, the new-phone question produced a supported MFA answer with article navigation and a lookup trace; the known injection request returned the validation error recorded in development; and an out-of-scope medicine question abstained. These are three deployment checks, not a new answer-accuracy benchmark. The original evaluation snapshots remain unchanged.
+
 Deploy the repository as a Render **Web Service** using the **Free** instance type. No database, disk, paid compute, or custom domain is required.
 
 ## Settings
